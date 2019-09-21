@@ -1,6 +1,6 @@
 baseURL = "https://sinsentido.github.io/"
 languageCode = "en-us"
-title = "Minimal"
+title = "Ir a github"
 theme = "base16"
 publishDir = "sinsentido.github.io"
 

@@ -3,7 +3,7 @@
 
   {{ partial "hero.html" . }}
 
-  <h1 class="headline">Recent Posts</h1>
+  <h1 class="headline">Últimas cosillas</h1>
 
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post") (or .Site.Params.paginate 3) }}
   <div class="article-list">
