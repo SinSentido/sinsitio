@@ -16,7 +16,7 @@ El primer paso que debemos hacer es eliminar los repositorios instalados en el e
 
 Después tenemos que borrar todos los archivos de configuración del sistema. Generalmente podemos encontrarlos en /var/lib/mysql, pero en caso de que no los encontremos ahí podemos consultar la ruta de instalación en el archivo /etc/my.conf
 
-<pre>[sinsentido@localhost ~]$ cat /etc/my.cnf | grep datadir
+<pre>$ cat /etc/my.cnf | grep datadir
 <font color="#CC0000"><b>datadir</b></font>=/var/lib/mysql
 </pre>
 
@@ -25,7 +25,7 @@ Después tenemos que borrar todos los archivos de configuración del sistema. Ge
 
 En mi caso lo he borrado porque no tengo nada importante ya que es una instalación que tengo para hacer cosas de clase. Pero si quisieramos conservar los archivos para hacer una copia de seguridad podemos renombrarlo en lugar de eliminarlo: 
 
-<pre>[sinsentido@localhost ~]$ sudo mv /var/lib/mysql /var/lib/mysql_backup
+<pre>$ sudo mv /var/lib/mysql /var/lib/mysql_backup
 </pre>
 
 <h2>Instalar mysql</h2>
