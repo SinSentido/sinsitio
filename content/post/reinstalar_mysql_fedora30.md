@@ -11,7 +11,7 @@ Para variar se me ha vuelto a olvidar la contraseña de root de mysql, y como he
 
 El primer paso que debemos hacer es eliminar los repositorios instalados en el equipo:
 
-<pre>[sinsentido@localhost ~]$ sudo dnf remove mysql mysql-server
+<pre>$ sudo dnf remove mysql mysql-server
 </pre>
 
 Después tenemos que borrar todos los archivos de configuración del sistema. Generalmente podemos encontrarlos en /var/lib/mysql, pero en caso de que no los encontremos ahí podemos consultar la ruta de instalación en el archivo /etc/my.conf
@@ -20,7 +20,7 @@ Después tenemos que borrar todos los archivos de configuración del sistema. Ge
 <font color="#CC0000"><b>datadir</b></font>=/var/lib/mysql
 </pre>
 
-<pre>[sinsentido@localhost ~]$ sudo rm -r /var/lib/mysql
+<pre>$ sudo rm -r /var/lib/mysql
 </pre>
 
 En mi caso lo he borrado porque no tengo nada importante ya que es una instalación que tengo para hacer cosas de clase. Pero si quisieramos conservar los archivos para hacer una copia de seguridad podemos renombrarlo en lugar de eliminarlo: 
@@ -32,7 +32,7 @@ En mi caso lo he borrado porque no tengo nada importante ya que es una instalaci
 
 Vale, ahora ya lo tenemos todo borrado y podemos empezar a reinstalar. Vamos a instalar el cliente y el servidor:
 
-<pre>[sinsentido@localhost ~]$ sudo dnf install mysql mysql-server
+<pre>$ sudo dnf install mysql mysql-server
 </pre>
 
 Y si todo corre sin errores ya tendremos instalado nuestro servidor mysql. 
@@ -41,18 +41,18 @@ Y si todo corre sin errores ya tendremos instalado nuestro servidor mysql.
 
 Lo primero que haremos una vez hayamos instalado mysql es iniciar el daemon y habilitarlo para que se inicie con el arranque del sistema.
 
-<pre>[sinsentido@localhost ~]$ sudo systemctl start mysqld
-[sinsentido@localhost ~]$ sudo systemctl enable mysqld
+<pre>$ sudo systemctl start mysqld
+$ sudo systemctl enable mysqld
 </pre>
 
 Para los siguientes pasos necesitamos tener la contraseña que mysql crea por defecto para el usuario root. La podemos encontrar en /var/log/mysqld.log
 
-<pre>[sinsentido@localhost ~]$ sudo cat /var/log/mysqld.log | grep password
+<pre>$ sudo cat /var/log/mysqld.log | grep password
 </pre>
 
 Una vez tenemos la contraseña por defecto entramos en mysql para cambiarla por una contraseña de nuestra elección con el siguiente comando:
 
-<pre>[sinsentido@localhost ~]$ mysqladmin -u root -p password NuevaContraseña
+<pre>$ mysqladmin -u root -p password NuevaContraseña
 Enter password: </pre>
 
 Donde pone Enter password introducimos la contraseña que hemos obtenido anteriormente y donde pone "NuevaContraseña" escribimos nuestra contraseña. 
@@ -61,7 +61,7 @@ Hay que decir que mysql se ha vuelto tiquismiquis con la seguridad de las contra
 
 Para finalizar probamos a entrar a mysql con la nueva contraseña y si lo hemos hecho bien debería ir correctamente.
 
-<pre>[sinsentido@localhost ~]$ mysql -u root -p
+<pre>$ mysql -u root -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 26
