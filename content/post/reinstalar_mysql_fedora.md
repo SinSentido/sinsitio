@@ -7,7 +7,7 @@ draft: false
 
 Para variar se me ha vuelto a olvidar la contraseña de root de mysql, y como he sido incapaz de cambiar la contraseña ya que no me funcionaba el comando mysqld_safe --skip-grant-tables & que es para iniciar mysql sin seguridad de manera que pudiera entrar a la cuenta de root y cambiar desde ahí la contraseña pues he tenido que reinstalarlo. Así que he decidido aprovechar para hacer un post sobre como eliminar correctamente y despues volver a instalar y configurar el servidor de mysql en fedora (quien me mandaría dejar debian, con lo apañaico que lo tenía todo ya).
 
-<h2><br/>Desinstalar mysql</h2>
+<h2>Desinstalar mysql</h2>
 
 El primer paso que debemos hacer es eliminar los repositorios instalados en el equipo:
 
@@ -28,7 +28,7 @@ En mi caso lo he borrado porque no tengo nada importante ya que es una instalaci
 <pre>$ sudo mv /var/lib/mysql /var/lib/mysql_backup
 </pre>
 
-<h2><br/>Instalar mysql</h2>
+<h2>Instalar mysql</h2>
 
 Vale, ahora ya lo tenemos todo borrado y podemos empezar a reinstalar. Vamos a instalar el cliente y el servidor:
 
@@ -37,7 +37,7 @@ Vale, ahora ya lo tenemos todo borrado y podemos empezar a reinstalar. Vamos a i
 
 Y si todo corre sin errores ya tendremos instalado nuestro servidor mysql. 
 
-<h2><br/>Configurar la nueva instalación</h2>
+<h2>Configurar la nueva instalación</h2>
 
 Lo primero que haremos una vez hayamos instalado mysql es iniciar el daemon y habilitarlo para que se inicie con el arranque del sistema.
 
